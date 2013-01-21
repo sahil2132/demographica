@@ -1,0 +1,30 @@
+@charset "UTF-8";
+/*
+Theme Name: Demographica
+Theme URI: /
+Description: 
+Version: 1.0
+Author: Mark Bloomfield
+Author URI: http://www.yellow-llama.com
+*/
+
+
+/* Globals
+  --------------------------------------------- */
+
+
+.row-fluid {}
+.sprite {}
+
+body {}
+
+img.alignleft {margin: 0 15px 15px 0;}
+img.alignright {margin: 0 0 15px 15px;}
+.aligncenter {margin: 15px auto;display:block;}
+.wp-caption p {font-size:12px;padding:0;text-align:right;margin: 0 10px 0 0;color:#888;}
+
+
+#wrap {width:900px;margin: 50px auto 0;}
+
+
+
