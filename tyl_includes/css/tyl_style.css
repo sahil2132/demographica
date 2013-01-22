@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+#specify {display: none;}
+.productgrid td {width: 50px;border: 1px solid black;}
+.product {display: none;}
+#cat-select {display: none;}
+
+
+
+.tyl_nav {padding-left:10px;margin:0;border:0;}
+.tyl_nav a {text-decoration:none;position:relative;z-index:0;}
+	
+	.tyl_nav .active a {z-index:99;}
+	.tyl_nav .text-warning {color:#f00;}
+
+.tab-pane {padding: 20px 20px;border:1px solid #ddd;border-radius: 5px;-webkit-border-radius: 5px;-moz-border-radius: 5px;position:relative;background-color: #f8f8f8; background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#f8f8f8));background-image: -webkit-linear-gradient(top, #fff, #f8f8f8); background-image: -moz-linear-gradient(top, #fff, #f8f8f8);background-image: -ms-linear-gradient(top, #fff, #f8f8f8);background-image: -o-linear-gradient(top, #fff, #f8f8f8);}
+
+	/* Forms Globals */
+	
+		input[type=radio], input[type=checkbox] {position:relative;top:3px;margin: 0 10px 0 0;}
+	
+	/* Gravity Forms */
+	
+		.gform_wrapper ul {margin:0;padding:0;}
+		.gform_wrapper ul li {list-style:none;}
+		
+		.gform_wrapper li {width:100%;float:left;margin: 0 0 10px;}
+		.gform_wrapper label {font-size:13px;font-weight:bold;}
+		.gform_wrapper input[type=text], .gform_wrapper input[type=password] {width:96%;padding: 0 2%;height:30px;line-height:30px;}
+		
+		.ginput_complex .ginput_left {width:46%;float:left;}
+		.ginput_complex .ginput_right {width:46%;float:right;}
+		
+			.ginput_complex label {font-size:12px;top:-10px;position:relative;font-weight:normal;}
+		
+	/* Login Form */
+	
+		#loginform .add-on {min-width:100px;text-align:left;}
+		form .input-prepend {margin: 0 0 10px;}
+		
+		form .buttonwrap {padding: 10px 0 0;}
+		
+		
+	/* Main Form */
+	
+		#specify {margin-top:15px;}
+		#specify .add-on, #specify input[type=text] {font-size:12px!important;}
