@@ -38,6 +38,13 @@
  * @since Twenty Ten 1.0
  */
 
+ 	/* TYL Tool */
+ 	
+		get_template_part('tyl_includes/tylmarketingtool/tool');
+		get_template_part('tyl_includes/tylmarketingtool/marketgrid');
+
+
+
 /**
  * Set the content width based on the theme's design and stylesheet.
  *
