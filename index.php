@@ -1,40 +1,32 @@
-<!DOCTYPE html>
-<head>
+<?php
+/**
+ * The main template file.
+ *
+ * This is the most generic template file in a WordPress theme
+ * and one of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ * E.g., it puts together the home page when no home.php file exists.
+ * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package WordPress
+ * @subpackage Twenty_Ten
+ * @since Twenty Ten 1.0
+ */
 
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title><?php wp_title(''); ?></title>
+get_header(); ?>
 
-<link rel="stylesheet" media="screen" type="text/css" href="<? bloginfo('template_directory'); ?>/css/bootstrap.css" />
-<link rel="stylesheet" media="screen" type="text/css" href="<? bloginfo('template_directory'); ?>/css/bootstrap-responsive.css" />
-<link rel="stylesheet" media="screen" type="text/css" href="<? bloginfo('template_directory'); ?>/style.css" />
-<link rel="shortcut icon" href="<? bloginfo('template_directory'); ?>/images/favicon.png" />
+		<div id="container">
+			<div id="content" role="main">
 
-<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-<!--[if lt IE 9]>
-  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
+			<?php
+			/* Run the loop to output the posts.
+			 * If you want to overload this in a child theme then include a file
+			 * called loop-index.php and that will be used instead.
+			 */
+			 get_template_part( 'loop', 'index' );
+			?>
+			</div><!-- #content -->
+		</div><!-- #container -->
 
-<?php wp_enqueue_script('bootstrap', get_bloginfo('template_directory').'/js/bootstrap.js', array('jquery'), '1.0', true ); ?>
-<?php wp_enqueue_script('tab', get_bloginfo('template_directory').'/js/bootstrap-tab.js', array('jquery'), '1.0', true ); ?>
-<?php wp_enqueue_script('theme', get_bloginfo('template_directory').'/js/theme.js', array('jquery'), '1.0', true ); ?>
-
-<?php wp_head(); ?>
-
-</head>
-
-<body <?php echo body_class(); ?>>
-
-<div id="wrap">
-
-
-	<?php tylUser(); ?>
-
-
-</div>
-
-<?php wp_footer(); ?>
-
-</body>
-</html>
+<?php get_sidebar(); ?>
+<?php get_footer(); ?>
