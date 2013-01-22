@@ -102,24 +102,10 @@
 			exit();
 		}
 	}
-?>
 
-<?php
-/**
 
-	Template Name: TYL Order Page
+	/* Template Name: TYL Order Page */
 	
- * The template for displaying all pages.
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
- *
- * @package WordPress
- * @subpackage Twenty_Ten
- * @since Twenty Ten 1.0
- */
 
 wp_enqueue_style('bootstrapcss', get_bloginfo('template_directory').'/tyl_includes/css/bootstrap.css' );
 wp_enqueue_style('bootstrapresponsive', get_bloginfo('template_directory').'/tyl_includes/css/bootstrap-responsive.css' );
