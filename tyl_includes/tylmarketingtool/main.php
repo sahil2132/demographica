@@ -1,7 +1,7 @@
 <ul class="tyl_nav nav-tabs" id="usertools">
 	<li class="active"><a href="#welcome" data-target="welcome">Hello <?php echo get_the_author_meta('user_firstname', USERID); ?></a></li>
 	<li><a href="#profile" data-target="profile">Update Profile</a></li>
-	<li><a href="<?php echo get_permalink(MAIN_PAGE_ID); ?>" class="text-warning logoutlink">Logout</a></li>
+	<li><a href="<?php echo wp_logout_url(get_permalink(MAIN_PAGE_ID)); ?>" class="text-warning logoutlink">Logout</a></li>
 </ul>
 
 <div class="tab-content">
@@ -13,9 +13,10 @@
 					<label class="radio"><input class="mainchoice" type="radio" name="mainchoiceoptions" value="nobudget"> I own the bank</label>
 					<label class="radio"><input class="mainchoice" type="radio" name="mainchoiceoptions" value="budget"> I'm on a budget</label>
 
-					<div id="specify" class="input-prepend">
+					<div id="specify" class="input-prepend input-append">
 						<span class="add-on">Specify your budget: R</span>
 						<input type="text" name="budgetAmount" id="budgetAmount"/>
+						<a class="add-on btn btn-primary" id="specifyupdate" href="#">Update</a>
 					</div>			
 				</fieldset>
 			</form>	
@@ -49,7 +50,7 @@
 			</div>			
 			
 			<div class="btn-group">
-				<button class="btn">Start over</button><button class="btn btn-success">I'm happy. Proceed to payment</button>
+				<a href="<?php echo get_permalink(MAIN_PAGE_ID); ?>" class="btn">Start over</a><a href="" class="btn btn-success">I'm happy. Proceed to payment</a>
 			</div>
 		</div>
 		

@@ -62,7 +62,6 @@ var $ = jQuery.noConflict();
 
  	$(document).ready(function(){
 
-
  		constructTables(pricing);
 
 
@@ -89,9 +88,9 @@ var $ = jQuery.noConflict();
 	 	});	
 	 	
 	 		// only show cat-select once value is specified
-			$('#specify').keyup( function(e) {
+			$('#specifyupdate').live('click',function() {
 
-				var budgetAmount = $(this).val();
+ 				budgetAmount = $("#budgetAmount").val(); 
 				
 			    if (budgetAmount != 'undefined') {
 					$("#cat-select").show();
@@ -99,11 +98,13 @@ var $ = jQuery.noConflict();
 		 			$("#cat-select").removeClass('nobudget');
 
 		 			budget=true;
-		 			console.log(budgetAmount);
-		 			
 		 		}
+		 		
+ 				budgetDivide(budgetAmount,$(this));
+		 		
+		 		return false;
 	 		});
-
+	 		
 
 	 	/*											*/
 	 	/*	PRICE LINE BUTTON CHANGE LISTENER		*/
@@ -153,7 +154,7 @@ var $ = jQuery.noConflict();
 	 		
 			$.each( selectionTotal, function(cat, catamount){
 					total += selectionTotal[cat];
-					results.children('.thetotals').children('.totalstable').append('<tr><th class="totalsitem">'+cat+'</td><td>'+catamount+'</td></tr>');
+					results.children('.thetotals').children('.totalstable').append('<tr><td class="totalsitem">'+cat+'</td><td>'+catamount+'</td></tr>');
 			});
 			
 			results.children('.thetotals').children('.totalstable').append('</tbody><tfoot><tr class="finaltotal"><td>&nbsp;</td><th>'+total+'</th></tr></tfoot>');
@@ -170,21 +171,33 @@ var $ = jQuery.noConflict();
 
 
 	 	function update_ui_budget_results(selectedCategories){
+	 	
 			results = $('#results');
 			results.empty();
-			results.append('<div class="span12 total"> Number of people: </div>');
-			$.each( selectedCategories.data, function(index, obj){
 
-					results.append('<div class="span12">'+ obj.name +': ' + obj.amount + '</div>');
+			$.each( selectedCategories.data, function(index, obj){
+				results.append('<form class="span6 budget_results"><fieldset><legend>'+obj.name+'</legend><div class="budget_count"><i class="icon-user"></i>'+obj.amount+' <small>recipients</small></div></fieldset></form>');
 			});
 
-			
+			$('.budget_results:eq(0), .budget_results:eq(1)').wrapAll('<div class="row-fluid results_row" />');
+			$('.budget_results:eq(2), .budget_results:eq(3)').wrapAll('<div class="row-fluid results_row" />');
 
+			
 			if(selectedCategories.data.length==0){
 				results.empty();
+			} else {
+			
+				// build the totals form
+				results.append('<form class="thetotals row-fluid"><fieldset><legend>Transaction Total</legend>');
+				results.children('.thetotals').append('<table class="totalstable table table-condensed"><thead><tr><th>Item</th><th>Amount</th></tr></thead><tbody>');
+				results.children('.thetotals').children('.totalstable').append('<tr><td class="totalsitem">Online Marketing</td><td>'+budgetAmount+'</td></tr>');
+				results.children('.thetotals').children('.totalstable').append('</tbody><tfoot><tr class="finaltotal"><td>&nbsp;</td><th>'+budgetAmount+'</th></tr></tfoot>');
+				results.append('</table>');
+			 	results.append('</fieldset></form>');
+				
+				$('.orderconfirm').show();
 			}
-
-
+			
 	 	}
 
 
@@ -198,23 +211,14 @@ var $ = jQuery.noConflict();
  		var totalTables = '0';
  		var tablesCount = '12';
  		
-		// add the initial full-width class (cos there'll be 1 to start with), and then hide it again until the user clicks his first option
-		$('.product').addClass('span'+tablesCount).hide();
- 		
  		$(".productcheck").live('change',function(e){
 
  			var grid = "#" + $(this).val()+"";
 
- 			//which option did they take
- 			// this shouldnt be here as if the clint anc check thes check boxes her already chose no budget 
 				if(budget==true) {
 
 	 				budgetAmount = $("#budgetAmount").val(); 
-	 				if ($(this).is(":checked")){
-
-		 				budgetDivide(budgetAmount,$(this));
-		 			
-		 			}
+	 				budgetDivide(budgetAmount,$(this));
 
 	 			}else{	
 
@@ -241,9 +245,7 @@ var $ = jQuery.noConflict();
 	 		// count how many options are selected, devide by 12 = spanX <-- the correct bootstrap class applied...
 	 		var tablesCount = 12 / totalTables;
 	 		$('.product').removeClass('span12').removeClass('span6').removeClass('span4').removeClass('span3');
-	 		$('.product:visible').each( function () {
-		 		$('.product').addClass('span'+tablesCount);
-	 		})
+	 		$('.product').not(':hidden').addClass('span'+tablesCount);
 	 		
  		});
 
@@ -262,7 +264,7 @@ var $ = jQuery.noConflict();
  			//loop through all the check boxes
 
     		if(this.checked){
-    			object =  JSON.parse('{ "' + $(this).val()+ '" : 0  , "id" : "' + $(this).val()+ '", "amount" : 0 , "name": "'+ $(this).prev(".cb-lable").text() +'"  }');
+    			object =  JSON.parse('{ "' + $(this).val()+ '" : 0  , "id" : "' + $(this).val()+ '", "amount" : 0 , "name": "'+ $(this).parent().text() +'"  }');
     			selectedCategories.data.push(object);
     		}
 		});

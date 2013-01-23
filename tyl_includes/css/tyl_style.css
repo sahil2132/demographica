@@ -18,15 +18,16 @@
 		.product tr:hover td {cursor: pointer;}
 		.product .success td {font-weight:bold;}
 		
-		.orderconfirm {padding-bottom:20px;margin-bottom:0;}
+		.orderconfirm {padding-bottom:20px;margin-bottom:0;margin-top:30px;}
 		.orderconfirm hr {margin: 20px 0;}
 		
 		.orderconfirm .input-prepend {width:50%;margin-left:25%;}
 		.orderconfirm .input-prepend label {font-size:12px;}
 		
 		.orderconfirm .btn-group {width:80%;margin: 0 0 0 10%;}
-			.orderconfirm .btn-group button:first-of-type {width:20%;color:#888;font-size:12px;}
-			.orderconfirm .btn-group button:last-of-type {width:80%;font-weight:bold;}
+			.orderconfirm .btn-group a {text-decoration:none;color:#fff;}
+			.orderconfirm .btn-group a:first-of-type {width:20%;color:#888;font-size:12px;}
+			.orderconfirm .btn-group a:last-of-type {width:80%;font-weight:bold;}
 	
 	/* Gravity Forms */
 	
@@ -54,5 +55,14 @@
 	
 		#specify {margin-top:15px;}
 		#specify .add-on, #specify input[type=text] {font-size:12px!important;}
+		#specify .btn {text-shadow: 1px 1px 1px rgba(0,0,0,0.5);text-decoration:none;padding-left:10px;padding-right:10px;color:#fff;}
 		
 			.totalsitem {width:80%;}
+		
+		.budget_results legend {margin-bottom:10px;}
+		.budget_count {font-size:28px;font-weight:bold;color:#333;}
+			.budget_count small {font-size:12px;font-weight:normal;color:#888;position:relative;top:-6px;}
+			.budget_count i {opacity:0.2;margin: 8px 10px 0 0;}
+		
+		.results_row:last-of-type {margin-bottom:20px;}
+		

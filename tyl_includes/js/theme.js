@@ -5,8 +5,9 @@ var $ = jQuery.noConflict(); $(document).ready(function(){
 		$('.gform_wrapper .btn').live('click', function() {
 			$('.validation_error').addClass('alert alert-info');
 		});
-		
+			
 	// tabs
+	
 		$('#usertools a').not('.logoutlink').click(function () {
 			target = $(this).attr('data-target');
 			
