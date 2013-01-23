@@ -25,9 +25,8 @@
 		.orderconfirm .input-prepend label {font-size:12px;}
 		
 		.orderconfirm .btn-group {width:80%;margin: 0 0 0 10%;}
-			.orderconfirm .btn-group a {text-decoration:none;color:#fff;}
-			.orderconfirm .btn-group a:first-of-type {width:20%;color:#888;font-size:12px;}
-			.orderconfirm .btn-group a:last-of-type {width:80%;font-weight:bold;}
+			.orderconfirm .btn-group button:first-of-type {width:20%;color:#888;font-size:12px;}
+			.orderconfirm .btn-group button:last-of-type {width:80%;font-weight:bold;}
 	
 	/* Gravity Forms */
 	

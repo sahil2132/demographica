@@ -1,5 +1,6 @@
 var $ = jQuery.noConflict();
-
+		
+	
 	var budget = "notset";
 	var email_a_check = $('#emailagencycheck');
 	var	email_d_check = $('#emaildirectcheck');
@@ -132,7 +133,7 @@ var $ = jQuery.noConflict();
 
 			//update UI //
 
-			$('.orderconfirm').show();
+			$('.orderconfirm').show();			
 
 			$(this).parent().find('tr').removeClass('success');
 			$(this).addClass('success');
@@ -381,9 +382,14 @@ var $ = jQuery.noConflict();
  	}
 
 
- 	// append the alert to tell the user how to choose a product
- 	//$('#productgrids').before('<div class="alert alert-info row-fluid"><strong>Note:</strong> Please choose which product(s) you\'d like to purchase.</div>');
-
+ 	
+ 	$('#termsagree').live('click',function() {
+	 	if ( $(this).is(':checked') ) {
+		 	$('#paymentbutton').removeAttr('disabled');
+	 	} else {
+		 	$('#paymentbutton').attr('disabled', 'disabled');
+	 	}
+ 	});
 
  			
 });

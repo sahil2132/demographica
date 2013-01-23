@@ -10,7 +10,7 @@
 			<form name="mainchoice">
 				<fieldset>
 					<legend>Make your selection below:</legend>
-					<label class="radio"><input class="mainchoice" type="radio" name="mainchoiceoptions" value="nobudget"> I own the bank</label>
+					<label class="radio"><input class="mainchoice" type="radio" name="mainchoiceoptions" value="nobudget"> I don't have a budget</label>
 					<label class="radio"><input class="mainchoice" type="radio" name="mainchoiceoptions" value="budget"> I'm on a budget</label>
 
 					<div id="specify" class="input-prepend input-append">
@@ -46,11 +46,12 @@
 			
 			<hr />
 			<div class="input-prepend">
-				<label class="checkbox"><input type="checkbox" name="iaccept" value="accept"> I have read, and agree to the <a href="#">Terms and Conditions</a></label>
+				<label class="checkbox"><input type="checkbox" name="iaccept" value="accept" id="termsagree"> I have read, and agree to the <a href="#">Terms and Conditions</a></label>
 			</div>			
 			
 			<div class="btn-group">
-				<a href="<?php echo get_permalink(MAIN_PAGE_ID); ?>" class="btn">Start over</a><a href="" class="btn btn-success">I'm happy. Proceed to payment</a>
+				<button onClick="location.href='<?php echo get_permalink(MAIN_PAGE_ID); ?>'" class="btn">Start Over</button>
+				<button class="btn btn-success" id="paymentbutton" disabled="disabled">I'm happy. Proceed to payment</button>
 			</div>
 		</div>
 		
