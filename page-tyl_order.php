@@ -110,12 +110,12 @@
 
 	// call up required scripts & styling
 	wp_enqueue_style('bootstrapcss', get_bloginfo('template_directory').'/tyl_includes/css/bootstrap.css' );
-	wp_enqueue_style('bootstrapresponsive', get_bloginfo('template_directory').'/tyl_includes/css/bootstrap-responsive.css' );
 	wp_enqueue_style('style', get_bloginfo('template_directory').'/tyl_includes/css/tyl_style.css' );
 	
-	wp_enqueue_script('bootstrap', get_bloginfo('template_directory').'/tyl_includes/js/bootstrap.js', array('jquery'), '1.0', true );
-	wp_enqueue_script('tyl_app', get_bloginfo('template_directory').'/tyl_includes/js/tyl_app.js', array('jquery'), '1.0', true );
-	wp_enqueue_script('theme', get_bloginfo('template_directory').'/tyl_includes/js/theme.js', array('jquery'), '1.0', true );
+	wp_enqueue_script('bootstrap', get_bloginfo('template_directory').'/tyl_includes/js/bootstrap.js', array('jquery'), '1.0' );
+	wp_enqueue_script('number', get_bloginfo('template_directory').'/tyl_includes/js/number.js', array('jquery'), '1.0' );
+	wp_enqueue_script('tyl_app', get_bloginfo('template_directory').'/tyl_includes/js/tyl_app.js', array('jquery'), '1.0' );
+	wp_enqueue_script('theme', get_bloginfo('template_directory').'/tyl_includes/js/theme.js', array('jquery'), '1.0' );
 
 get_header(); ?>
 

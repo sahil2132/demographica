@@ -6,7 +6,7 @@
 
 <div class="tab-content">
 	<div class="tab-pane active" id="welcome">
-		<div id="mainchoice">
+		<div id="mainchoice" class="row-fluid">
 			<form name="mainchoice">
 				<fieldset>
 					<legend>Make your selection below:</legend>
@@ -21,7 +21,7 @@
 			</form>	
 		</div><!-- main choice -->
 
-		<div id="cat-select">
+		<div id="cat-select" class="row-fluid">
 			<form name="cat-options">
 				<fieldset>
 					<legend>Select the categories you would like to target:</legend>
@@ -33,8 +33,26 @@
 			</form>	
 		</div><!-- main choice -->
 					
-		<div id="results" class="clearfix"></div>	
-		<div id="productgrids" class="clearfix"></div>	
+		<div id="productgrids" class="row-fluid"></div>
+		<div id="results" class="row-fluid"></div>
+		
+		<div class="alert alert-info orderconfirm" style="display:none;">
+			<p>
+				<strong>What's next?</strong><br />If you are happy with the above transaction details, please click the button below. This button will take you to a payment gateway 
+				where the above amount will be taken from your card. Once the transaction is successfully completed, your details will be sent to one of our account 
+				managers who will be in touch with you shortly to proceed with your order.
+			</p>
+			
+			<hr />
+			<div class="input-prepend">
+				<label class="checkbox"><input type="checkbox" name="iaccept" value="accept"> I have read, and agree to the <a href="#">Terms and Conditions</a></label>
+			</div>			
+			
+			<div class="btn-group">
+				<button class="btn">Start over</button><button class="btn btn-success">I'm happy. Proceed to payment</button>
+			</div>
+		</div>
+		
 	</div><!-- welcome -->
 	
 	<div class="tab-pane" id="profile">

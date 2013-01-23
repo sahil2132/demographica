@@ -1,11 +1,8 @@
 @charset "UTF-8";
 
-#specify {display: none;}
-.productgrid td {width: 50px;border: 1px solid black;}
-.product {display: none;}
-#cat-select {display: none;}
+.row-fluid {margin:0;width:100%;}
 
-
+#specify, .product, #cat-select {display: none;}
 
 .tyl_nav {padding-left:10px;margin:0;border:0;}
 .tyl_nav a {text-decoration:none;position:relative;z-index:0;}
@@ -18,6 +15,18 @@
 	/* Forms Globals */
 	
 		input[type=radio], input[type=checkbox] {position:relative;top:3px;margin: 0 10px 0 0;}
+		.product tr:hover td {cursor: pointer;}
+		.product .success td {font-weight:bold;}
+		
+		.orderconfirm {padding-bottom:20px;margin-bottom:0;}
+		.orderconfirm hr {margin: 20px 0;}
+		
+		.orderconfirm .input-prepend {width:50%;margin-left:25%;}
+		.orderconfirm .input-prepend label {font-size:12px;}
+		
+		.orderconfirm .btn-group {width:80%;margin: 0 0 0 10%;}
+			.orderconfirm .btn-group button:first-of-type {width:20%;color:#888;font-size:12px;}
+			.orderconfirm .btn-group button:last-of-type {width:80%;font-weight:bold;}
 	
 	/* Gravity Forms */
 	
@@ -45,3 +54,5 @@
 	
 		#specify {margin-top:15px;}
 		#specify .add-on, #specify input[type=text] {font-size:12px!important;}
+		
+			.totalsitem {width:80%;}
