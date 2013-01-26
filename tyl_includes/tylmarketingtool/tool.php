@@ -4,7 +4,7 @@
 	
 		// define some globals
 		
-			define('MAIN_PAGE_ID', '1468');
+			define('MAIN_PAGE_ID', '2');
 	
 		// general functions
 

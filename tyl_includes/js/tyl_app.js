@@ -1,6 +1,8 @@
 var $ = jQuery.noConflict();
-		
 	
+
+
+
 	var budget = "notset";
 	var email_a_check = $('#emailagencycheck');
 	var	email_d_check = $('#emaildirectcheck');
@@ -66,6 +68,8 @@ var $ = jQuery.noConflict();
  		constructTables(pricing);
 
 
+ 	
+ 	
  		/*													*/
 	 	/*	MAIN CHOICE RADIO BUTTON CHANGE LISTENER		*/
 	 	/*													*/
@@ -296,6 +300,7 @@ var $ = jQuery.noConflict();
  		var previouscost = 0.0;
  		var previousamount = 0;
 
+
  		for (index in selectedCategories.data){
  			var catamount = 0;
  			var allocated = false;
@@ -347,6 +352,9 @@ var $ = jQuery.noConflict();
  	/*	FOR CLIENT TO SELECT		*/
  	/*	FROM						*/
  	/*								*/
+
+
+
  	function constructTables(pricingdata){
 
  		productarea = $('#productgrids');
@@ -367,9 +375,8 @@ var $ = jQuery.noConflict();
 			 	if(catobject[catname]){
 		 			$.each( catobject[catname], function(catindex, priceitems){
 		 	 			$.each( priceitems, function(priceitemindex, priceline){
-		 	 				// DWAIN - ENABLE THIS COMMENTED OUT LINE, ONCE YOU CAN FIGURE OUT HOW TO GET THE $.number() PLUGIN TO WORK
-		 	 				//productarea.children('.product').children('#'+catname+'table').append('<tr> <td> <input type="radio" class="priceline" name="'+catname+'" value="'+priceitemindex+'" /> </td><td>'+ $.number(priceline.amount, 2) +'</td><td>'+$.number(priceline.cost, 2) +'</td><td>'+$.number(priceline.total, 2) +'</td></tr>'); 
-		 	 				productarea.children('.product').children('#'+catname+'table').append('<tr data-name="'+catname+'" data-index="'+priceitemindex+'"><td>'+priceline.amount +'</td><td>'+priceline.cost +'</td><td>'+priceline.total +'</td></tr>');
+		 	 				productarea.children('.product').children('#'+catname+'table').append('<tr> <td> <input type="radio" class="priceline" name="'+catname+'" value="'+priceitemindex+'" /> </td><td>'+ formatnum(priceline.amount, 2) +'</td><td>'+ formatnum(priceline.cost, 2) +'</td><td>'+formatnum(priceline.total, 2) +'</td></tr>'); 
+		 	 				//productarea.children('.product').children('#'+catname+'table').append('<tr data-name="'+catname+'" data-index="'+priceitemindex+'"><td>'+priceline.amount +'</td><td>'+priceline.cost +'</td><td>'+priceline.total +'</td></tr>');
 		 	 			});
 		 	 		}); 
 			 	}
@@ -381,6 +388,56 @@ var $ = jQuery.noConflict();
 
  	}
 
+ 	/*													*/
+ 	/*	Format amount function 							*/
+ 	/*	arguments number and the number or 				*/	
+ 	/*	decimal places wanted							*/	
+ 	/*													*/	
+ 	function formatnum(number, decimalplaces){
+
+ 			var decimal = ".00" ;
+ 			var amount ;
+ 			var formatedamount = "";
+ 			var parts ; 
+ 			var powerholder;
+
+ 			parts = String(number).split(".");
+
+ 			//string format to have space after every third character
+ 			amount = parts[0];
+ 			amountparts = String(amount).split("");
+ 			var tempstring = new Array();
+ 			var counter = 0;
+ 			for(i=amountparts.length-1; i >= 0 ; i--){
+ 				counter++;
+ 				if(counter%3==0)
+ 				{	
+ 					tempstring[i] = " " + amountparts[i];
+
+ 				}else{
+
+ 					tempstring[i] = amountparts[i];
+ 				}
+
+ 			}
+
+ 			for(i=0; i < tempstring.length; i++){
+
+ 				formatedamount += tempstring[i];
+ 			}
+
+ 			//Decimal places calculations
+ 			if(parts.length > 1){ // check if it has a decimal part
+ 				decimal = parseFloat("0."+ parts[1]); 		
+
+ 				//set decimal places 
+ 				powerholder = Math.pow(10,decimalplaces);
+ 				decimal =  Math.round(decimal*powerholder)/powerholder; 
+ 				decimal = "." + String(decimal).split(".")[1];	
+ 			}
+
+ 			return formatedamount + decimal;
+ 	}
 
  	
  	$('#termsagree').live('click',function() {
