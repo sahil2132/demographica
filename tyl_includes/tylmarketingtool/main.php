@@ -32,9 +32,7 @@
 				<fieldset>
 					<legend>Select the categories you would like to target:</legend>
 					<label class="checkbox"><input type="checkbox" name="select-cat" class="productcheck" id="smsdirectcheck" value="smsdirect"> SMS Direct</label>
-					<label class="checkbox"><input type="checkbox" name="select-cat" class="productcheck" id="smsagencycheck" value="smsagency"> SMS Agency</label>
 					<label class="checkbox"><input type="checkbox" name="select-cat" class="productcheck" id="emaildirectcheck" value="emaildirect"> Email Direct</label>
-					<label class="checkbox"><input type="checkbox" name="select-cat" class="productcheck" id="emailagencycheck" value="emailagency"> Email Agency</label>
 				</fieldset>
 			</form>	
 		</div><!-- main choice -->

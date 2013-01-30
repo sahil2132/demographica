@@ -337,22 +337,7 @@ function category_manage(){
 		 		
 		 		</table>
 		 </div>	
-		  <div id="smsagency" class="marketcat">
-		  	<h3>SMS Agency</h3>
-		 		<table>
-			 		<tr>
-			 		<th>Amount</th>
-			 		<th>Cost</th>
-			 		<th>Total</th>
-			 		<th></th>
-			 		</tr>	
-			 		<? 
-			 			$sms_agency_data = $pricing_array['smsagency']['grid'];
-			 			print_grid("smsagency",$sms_agency_data ) ;
-			 		?>
-		 		
-		 		</table>
-		 </div>	
+		 
 		 <div id="emaildirect" class="marketcat">
 		 	<h3>Email Direct</h3>
 		 	<table>
@@ -368,23 +353,6 @@ function category_manage(){
 		 		?>
 		 		
 		 	</table>
-		 </div>	
-
-		 <div id="emailagency" class="marketcat">
-		 		<h3>Email Agency</h3>
-		 		<table>
-			 		<tr>
-			 		<th>Amount</th>
-			 		<th>Cost</th>
-			 		<th>Total</th>
-			 		<th></th>
-			 		</tr>	
-			 		<? 
-			 			$email_agency_data = $pricing_array['emailagency']['grid'];
-			 			print_grid("emailagency",$email_agency_data ) ;
-			 		?>
-		 		
-		 		</table>
 		 </div>	
 		 <br>
 		 <br>
