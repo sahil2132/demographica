@@ -112,7 +112,13 @@
 	// call up required scripts & styling
 	wp_enqueue_style('bootstrapcss', get_bloginfo('template_directory').'/tyl_includes/css/bootstrap.css' );
 	wp_enqueue_style('style', get_bloginfo('template_directory').'/tyl_includes/css/tyl_style.css' );
+	?>
+		<script type="text/javascript">
 
+				var php_data_price =  <?php echo get_option('tyl_market_cat_data'); ?> ;
+
+		</script>
+	<?php
 	wp_enqueue_script('bootstrap', get_bloginfo('template_directory').'/tyl_includes/js/bootstrap.js', array('jquery'), '1.0' );
 	wp_enqueue_script('number', get_bloginfo('template_directory').'/tyl_includes/js/number.js', array('jquery'), '1.0' );
 	wp_enqueue_script('tyl_app', get_bloginfo('template_directory').'/tyl_includes/js/tyl_app.js', array('jquery'), '1.0' );

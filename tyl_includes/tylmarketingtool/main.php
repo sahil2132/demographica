@@ -1,3 +1,8 @@
+
+<script type="text/javascript">
+		var php_data_price =  <?php echo get_option('tyl_market_cat_data'); ?> ;
+</script>
+
 <ul class="tyl_nav nav-tabs" id="usertools">
 	<li class="active"><a href="#welcome" data-target="welcome">Hello <?php echo get_the_author_meta('user_firstname', USERID); ?></a></li>
 	<li><a href="#profile" data-target="profile">Update Profile</a></li>
